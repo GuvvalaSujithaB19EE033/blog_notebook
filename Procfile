@@ -1,1 +1,1 @@
-web gunicorn my_notebook.wsgi:apllication --log-file -
+web gunicorn my_notebook.wsgi:application --log-file -
