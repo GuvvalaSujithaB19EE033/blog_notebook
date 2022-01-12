@@ -1,0 +1,1 @@
+web gunicorn my_notebook.wsgi:apllication --log-file -

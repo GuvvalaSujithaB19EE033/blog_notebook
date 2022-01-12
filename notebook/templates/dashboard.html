@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/css.html' %}
+{% block extra_css %} {% endblock %}
+<style>
+.hi{
+  margin: 25px;
+  width: auto;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+.main-panel {
+  background-color: #d2e7e5;
+}
+
+</style>
+<body class="">
+  <div class="wrapper ">
+    {% include 'include/navbar.html' %}
+    <div class="main-panel">
+      <!-- Navbar -->
+      
+      <!-- End Navbar -->
+      <!-- <div class="panel-header panel-header-lg">
+
+  <canvas id="bigDashboardChart"></canvas>
+        </div> -->
+       {% block content %}
+
+       {% endblock %}
+
+        {% if messages  %}
+           <div class="modal" tabindex="-1" role="dialog" id="messageModal">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Done</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <ul class="message">
+                        {% for message in messages %}
+                            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                                 {{ message }}
+         
+                                </li>
+                        {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        {% endif %}
+            <footer class="footer footer-black  footer-white ">
+        <div class="container-fluid">
+          <div class="row">
+            <nav class="footer-nav">
+              <ul>
+                
+              </ul>
+            </nav>
+            <div class="credits ml-auto" style="text-align: left">
+              <div class="hi" style="text-align: center" >
+                <h3 class="contacttext contactus"><strong>Get in Touch</strong></h3>
+                <p class="contacttext">Email : sujitha.1@iitj.ac.in</p>
+                <p class="contacttext">Contact Number : +919390199923 </p>
+                <a href="https://github.com/SujithaGuvvala"><i class="fa fa-github" style="font-size:36px; color:black"></i></a>
+                <a href="https://www.linkedin.com/in/guvvala-sujitha-05888b1a6"><i class="fa fa-linkedin-square" style="font-size:36px;color:black;padding-left:25px;"></i>
+                </a>
+                <script>  
+                </script> made with <i class="fa fa-heart heart"></i> by Sujitha
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+        </div>
+
+    </div>
+  {% include 'include/js.html' %}
+  {% block extra_js %} {% endblock %}
+</body>
+
+</html>
+
